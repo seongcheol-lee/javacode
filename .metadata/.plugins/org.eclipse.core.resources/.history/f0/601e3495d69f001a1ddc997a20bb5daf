@@ -1,0 +1,10 @@
+package exam.ifExample;
+
+public class IfExample {
+	public static void main(String[] args) {
+		if(false) 
+			System.out.println("인쇄");
+		System.out.println("!!");
+		
+	}
+}
