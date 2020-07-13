@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function printResult() {
+            var btnPrint = document.getElementById('btn-print');
+            var x, y;
+            x = prompt("X값을 입력하세요. ");
+            y = prompt("Y값을 입력하세요. ");
+            btnPrint.value = x + y;
+        }
+        function init() {
+            var btnPrint = document.getElementById('btn-print');
+            btnPrint.onclick = printResult;
+        }
+        window.onload = init;
+        //윈도우가 로드되었을 때만 자바스크립트 실행되도록
+    </script>
+</head>
+
+<body>
+    <input type="button" id="btn-print" value="Print" />
+</body>
+
+</html>

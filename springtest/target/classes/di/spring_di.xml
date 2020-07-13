@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- Exam exam = new AiExam(); -->
+	<bean id="exam" class="di.entity.AiExam" />
+	<!-- ExamConsole console = new InlineExamConsole(); -->
+	<!-- <bean id="console" class="di.ui.InlineExamConsole"> -->
+	<bean id="console" class="di.ui.GridExamConsole">
+		<!-- console.setExam(exam); -->
+		<!-- set메서드=property, setExam->exam, (exam)->exam(참조 변수) -->
+		<!-- <property name="exam" value = "값 변수" ref = "참조 변수(스프링에 설정된 id에 있는)"></property> -->
+		<property name="exam" ref="exam"></property>
+	</bean>
+</beans>

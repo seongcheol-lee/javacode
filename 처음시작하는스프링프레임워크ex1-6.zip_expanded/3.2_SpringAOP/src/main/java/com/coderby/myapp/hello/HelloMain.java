@@ -1,0 +1,16 @@
+package com.coderby.myapp.hello;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+import com.coderby.myapp.hello.configuration.RootConfig;
+import com.coderby.myapp.hello.controller.HelloController;
+
+public class HelloMain {
+	public static void main(String[] args) {
+		AbstractApplicationContext context = new AnnotationConfigApplicationContext(RootConfig.class);
+		HelloController controller = context.getBean("helloController", HelloController.class);
+		controller.hello("Spring AOP");
+		context.close();
+	}
+}
